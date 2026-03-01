@@ -1,3 +1,5 @@
-NotesApi/bin/
-NotesApi/obj/
+**/bin/
+**/obj/
 .env
+*.user
+.DS_Store
