@@ -7,7 +7,7 @@ using NotesApi.Services;
 namespace NotesApi.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/v1/notes")]
 [Authorize]
 public class NotesController : ControllerBase
 {
