@@ -1,14 +1,20 @@
 using System.Text;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using NotesApi.Repositories;
 using NotesApi.Services;
+using NotesApi.Validators;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Controllers
 builder.Services.AddControllers();
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddValidatorsFromAssemblyContaining<RegisterDtoValidator>();
 
 // Swagger
 builder.Services.AddEndpointsApiExplorer();
